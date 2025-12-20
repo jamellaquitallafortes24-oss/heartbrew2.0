@@ -1,0 +1,8 @@
+Problem
+
+	The system encountered an error where only the first user could successfully register, while subsequent registration attempts failed. The error message displayed was “Duplicate entry for key 'PRIMARY'.” This issue occurred because the id column in the users table was not properly configured to automatically generate unique values. As a result, the database attempted to assign the same id value to multiple users. Since the id field is defined as the PRIMARY KEY, duplicate values are not allowed, causing the registration process to fail.
+
+
+Solution
+
+	To resolve the issue, the database structure of the users table was corrected by properly configuring the id column as an AUTO_INCREMENT PRIMARY KEY. This ensures that each new user is automatically assigned a unique identifier by the database. Any existing invalid records with duplicate or zero values were removed to prevent conflicts. After implementing these changes, the registration process functioned correctly, allowing multiple users to register without encountering duplicate key errors.
